@@ -179,9 +179,10 @@ def pregunta_10():
     2   C                    0:5:6:7:9
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
-    """
-    return
+    """      
+    return tbl0.groupby('_c1').apply(lambda x: ":".join([str(elemento) for elemento in sorted(x['_c2'].to_list())]))
 
+#print(pregunta_10())
 
 def pregunta_11():
     """
