@@ -40,7 +40,7 @@ def pregunta_02():
     """
     return len(tbl0.columns)
 
-print(pregunta_02())
+#print(pregunta_02())
 
 def pregunta_03():
     """
@@ -56,8 +56,11 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
-    return
+    columna = tbl0['_c1'].value_counts().sort_index()
+    columna.name = '_c1'
+    return columna
 
+#print(pregunta_03())
 
 def pregunta_04():
     """
