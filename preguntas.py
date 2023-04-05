@@ -252,4 +252,12 @@ def pregunta_13():
     E    275
     Name: _c5b, dtype: int64
     """
-    return
+    tabla0 = tbl0[['_c0','_c1']]
+    tabla2 = tbl2[['_c0','_c5b']].groupby('_c0').sum()
+
+    tabla = pd.concat(objs=[tabla0,tabla2],axis=1)
+    tabla = tabla.groupby('_c1').sum()
+    tabla.pop('_c0')
+    return tabla
+
+#print(pregunta_13())
