@@ -200,7 +200,7 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    
+
     return tbl1.groupby('_c0').apply(lambda x: ",".join(sorted(x['_c4'].to_list())))
 
 #print(pregunta_11())
@@ -220,8 +220,23 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
-    return
+    def func(x):
+        columna1 = x['_c5a'].to_list()
+        columna2 = x['_c5b'].to_list()
+        columna3 = list(zip(columna1,columna2))
+        lista = []
+        for tupla in columna3:
+            tupla = ":".join([tupla[0],str(tupla[1])])
+            lista.append(tupla)
+        lista = sorted(lista)
+        lista = ','.join(lista)
 
+        return lista
+
+    tabla = tbl2.copy().groupby('_c0').apply(func)
+    return tabla
+
+#print(pregunta_12())
 
 def pregunta_13():
     """
