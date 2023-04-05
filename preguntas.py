@@ -105,8 +105,9 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
-    return
+    return list(map(str.upper,sorted(tbl1['_c4'].unique())))
 
+#print(pregunta_06())
 
 def pregunta_07():
     """
