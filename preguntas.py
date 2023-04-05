@@ -56,9 +56,8 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
-    columna = tbl0['_c1'].value_counts().sort_index()
-    columna.name = '_c1'
-    return columna
+
+    return tbl0['_c1'].value_counts().sort_index()
 
 #print(pregunta_03())
 
@@ -74,8 +73,10 @@ def pregunta_04():
     E    4.785714
     Name: _c2, dtype: float64
     """
-    return
 
+    return tbl0[['_c1','_c2']].groupby('_c1').mean()
+
+#print(pregunta_04())
 
 def pregunta_05():
     """
@@ -91,8 +92,9 @@ def pregunta_05():
     E    9
     Name: _c2, dtype: int64
     """
-    return
+    return tbl0[['_c1','_c2']].groupby('_c1').max()
 
+#print(pregunta_05())
 
 def pregunta_06():
     """
