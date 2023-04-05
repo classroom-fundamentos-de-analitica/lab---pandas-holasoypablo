@@ -200,8 +200,11 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    return
+    tabla = tbl1.groupby('_c0').apply(lambda x: ",".join(sorted(x['_c4'].to_list())))
+    
+    return tabla 
 
+#print(pregunta_11())
 
 def pregunta_12():
     """
