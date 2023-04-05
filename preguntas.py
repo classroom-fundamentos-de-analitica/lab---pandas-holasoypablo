@@ -122,8 +122,9 @@ def pregunta_07():
     E    67
     Name: _c2, dtype: int64
     """
-    return
+    return tbl0[['_c1','_c2']].groupby('_c1').sum()
 
+#print(pregunta_07())
 
 def pregunta_08():
     """
