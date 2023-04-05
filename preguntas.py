@@ -25,7 +25,7 @@ def pregunta_01():
     """
     return len(tbl0)
 
-print(pregunta_01())
+#print(pregunta_01())
 
 def pregunta_02():
     """
