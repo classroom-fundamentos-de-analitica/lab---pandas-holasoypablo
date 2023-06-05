@@ -76,7 +76,7 @@ def pregunta_04():
 
     return tbl0[['_c1','_c2']].groupby('_c1').mean()
 
-#print(pregunta_04())
+print(pregunta_04())
 
 def pregunta_05():
     """
