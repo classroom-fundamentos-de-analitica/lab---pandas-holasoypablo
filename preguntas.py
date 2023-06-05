@@ -93,7 +93,7 @@ def pregunta_05():
     E    9
     Name: _c2, dtype: int64
     """
-    return tbl0[['_c1','_c2']].groupby('_c1').max()
+    return (tbl0[['_c1','_c2']].groupby('_c1').max()).squeeze()
 
 #print(pregunta_05())
 
@@ -123,7 +123,7 @@ def pregunta_07():
     E    67
     Name: _c2, dtype: int64
     """
-    return tbl0[['_c1','_c2']].groupby('_c1').sum()
+    return (tbl0[['_c1','_c2']].groupby('_c1').sum()).squeeze()
 
 #print(pregunta_07())
 
@@ -259,6 +259,6 @@ def pregunta_13():
     tabla = pd.concat(objs=[tabla0,tabla2],axis=1)
     tabla = tabla.groupby('_c1').sum()
     tabla.pop('_c0')
-    return tabla
+    return tabla.squeeze()
 
 #print(pregunta_13())
