@@ -182,24 +182,11 @@ def pregunta_10():
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
     serie =  tbl0.groupby('_c1').apply(lambda x: ":".join([str(elemento) for elemento in sorted(x['_c2'].to_list())]))     
-    #return pd.DataFrame({'_c1':serie.index,'_c2':serie.values})
-    datafame = serie.to_frame().rename(columns={0:'_c2'})
+    dataframe = serie.to_frame().rename(columns={0:'_c2'})
 
-    return datafame
+    return dataframe
 
-print(pregunta_10())
-print(pd.DataFrame(
-            {
-                "_c2": [
-                    "1:1:2:3:6:7:8:9",
-                    "1:3:4:5:6:8:9",
-                    "0:5:6:7:9",
-                    "1:2:3:5:5:7",
-                    "1:1:2:3:3:4:5:5:5:6:7:8:8:9",
-                ]
-            },
-            index=pd.Series(["A", "B", "C", "D", "E"], name="_c1"),
-        ))
+#print(pregunta_10())
 
 def pregunta_11():
     """
@@ -217,10 +204,10 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
+    serie = tbl1.groupby('_c0').apply(lambda x: ",".join(sorted(x['_c4'].to_list())))
+    return pd.DataFrame({'_c0':serie.index, '_c4':serie.values})
 
-    return tbl1.groupby('_c0').apply(lambda x: ",".join(sorted(x['_c4'].to_list())))
-
-#print(pregunta_11())
+print(pregunta_11())
 
 def pregunta_12():
     """
