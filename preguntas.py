@@ -207,7 +207,7 @@ def pregunta_11():
     serie = tbl1.groupby('_c0').apply(lambda x: ",".join(sorted(x['_c4'].to_list())))
     return pd.DataFrame({'_c0':serie.index, '_c4':serie.values})
 
-print(pregunta_11())
+#print(pregunta_11())
 
 def pregunta_12():
     """
@@ -237,10 +237,10 @@ def pregunta_12():
 
         return lista
 
-    tabla = tbl2.copy().groupby('_c0').apply(func)
-    return tabla
+    serie = tbl2.copy().groupby('_c0').apply(func)
+    return pd.DataFrame({'_c0':serie.index,'_c5':serie.values})
 
-#print(pregunta_12())
+print(pregunta_12())
 
 def pregunta_13():
     """
