@@ -182,9 +182,22 @@ def pregunta_10():
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
     serie =  tbl0.groupby('_c1').apply(lambda x: ":".join([str(elemento) for elemento in sorted(x['_c2'].to_list())]))     
-    return pd.DataFrame({'_c1':serie.index,'_c2':serie.values})
+    #return pd.DataFrame({'_c1':serie.index,'_c2':serie.values})
+    return serie.to_frame()
 
 print(pregunta_10())
+print(pd.DataFrame(
+            {
+                "_c2": [
+                    "1:1:2:3:6:7:8:9",
+                    "1:3:4:5:6:8:9",
+                    "0:5:6:7:9",
+                    "1:2:3:5:5:7",
+                    "1:1:2:3:3:4:5:5:5:6:7:8:8:9",
+                ]
+            },
+            index=pd.Series(["A", "B", "C", "D", "E"], name="_c1"),
+        ))
 
 def pregunta_11():
     """
