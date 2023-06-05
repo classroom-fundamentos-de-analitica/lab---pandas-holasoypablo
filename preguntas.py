@@ -183,7 +183,9 @@ def pregunta_10():
     """
     serie =  tbl0.groupby('_c1').apply(lambda x: ":".join([str(elemento) for elemento in sorted(x['_c2'].to_list())]))     
     #return pd.DataFrame({'_c1':serie.index,'_c2':serie.values})
-    return serie.to_frame()
+    datafame = serie.to_frame().rename(columns={0:'_c2'})
+
+    return datafame
 
 print(pregunta_10())
 print(pd.DataFrame(
